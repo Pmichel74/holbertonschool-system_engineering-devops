@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1000" height="700" xmlns="http://www.w3.org/2000/svg">
+    <!-- Client Browser -->
+    <rect x="50" y="100" width="200" height="150" fill="white" stroke="black" />
+    <text x="70" y="130" font-family="Arial">www.foobar.com</text>
+    <rect x="60" y="150" width="150" height="30" fill="white" stroke="black" />
+    <text x="70" y="170" font-family="Arial" font-size="12">Search here</text>
+
+    <!-- DNS Box -->
+    <rect x="300" y="50" width="100" height="60" fill="white" stroke="black" />
+    <text x="330" y="85" font-family="Arial">DNS</text>
+    
+    <!-- DNS Arrows and Text -->
+    <path d="M250,150 L300,80" stroke="black" fill="none" marker-end="url(#arrowhead)" />
+    <text x="200" y="100" font-family="Arial" font-size="10" transform="rotate(-30 250,120)">What is the IP address of www.foobar.com?</text>
+    <path d="M300,80 L250,150" stroke="black" fill="none" marker-end="url(#arrowhead)" />
+    <text x="280" y="140" font-family="Arial" font-size="10" transform="rotate(-30 280,120)">on 8.8.8.8 address!</text>
+
+    <!-- SSL Shield -->
+    <path d="M250,200 L300,200" stroke="black" fill="none" />
+    <path d="M270,180 Q285,180 285,200 L285,220 Q285,240 270,240 L230,240 Q215,240 215,220 L215,200 Q215,180 230,180 Z" fill="#FFA500" stroke="black" />
+    <text x="235" y="215" font-family="Arial" font-size="12" fill="white">SSL</text>
+
+    <!-- HTTPS Text -->
+    <text x="320" y="190" font-family="Arial" font-size="12">https</text>
+    
+    <!-- Load Balancer -->
+    <rect x="350" y="200" width="120" height="80" fill="white" stroke="black" />
+    <text x="360" y="240" font-family="Arial" font-size="12">Load Balancer</text>
+    <text x="360" y="260" font-family="Arial" font-size="12">(HAProxy)</text>
+
+    <!-- SPOF Label -->
+    <text x="360" y="300" font-family="Arial" font-size="12" fill="red">SPOF</text>
+
+    <!-- Monitoring Clients -->
+    <g transform="translate(350,400)">
+        <rect width="150" height="60" fill="white" stroke="black" />
+        <text x="10" y="35" font-family="Arial" font-size="12">Monitoring clients</text>
+        <text x="10" y="50" font-family="Arial" font-size="12">(sumologic)</text>
+    </g>
+
+    <!-- Servers with Firewall -->
+    <g id="server" transform="translate(600,50)">
+        <!-- Firewall -->
+        <rect x="-30" y="0" width="20" height="120" fill="#006400" stroke="black" />
+        <text x="-25" y="70" font-family="Arial" font-size="12" fill="white" transform="rotate(-90 -25,70)">firewall</text>
+        
+        <!-- Server A -->
+        <rect width="200" height="120" fill="#FFE5B4" stroke="black" />
+        <text x="10" y="20" font-family="Arial" font-size="12">Server A (active)</text>
+        <rect x="10" y="30" width="60" height="60" fill="#ADD8E6" stroke="black" />
+        <text x="15" y="50" font-family="Arial" font-size="10">Web Server</text>
+        <text x="15" y="65" font-family="Arial" font-size="10">Nginx</text>
+        <rect x="80" y="30" width="60" height="60" fill="white" stroke="black" />
+        <text x="85" y="50" font-family="Arial" font-size="10">Application</text>
+        <text x="85" y="65" font-family="Arial" font-size="10">Server</text>
+        <circle cx="160" cy="60" r="20" fill="#90EE90" stroke="black" />
+        <text x="145" y="65" font-family="Arial" font-size="10">MySQL</text>
+    </g>
+
+    <!-- Copy servers B and C -->
+    <use href="#server" transform="translate(0,150)" />
+    <use href="#server" transform="translate(0,300)" />
+
+    <!-- Arrows -->
+    <path d="M470,240 L570,100" stroke="black" fill="none" marker-end="url(#arrowhead)" />
+    <path d="M470,240 L570,250" stroke="black" fill="none" marker-end="url(#arrowhead)" />
+    <path d="M470,240 L570,400" stroke="black" fill="none" marker-end="url(#arrowhead)" />
+    
+    <!-- Monitoring Arrow -->
+    <path d="M425,400 C450,350 500,300 570,400" stroke="black" fill="none" marker-end="url(#arrowhead)" />
+
+    <!-- Arrow Marker Definition -->
+    <defs>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="black" />
+        </marker>
+    </defs>
+</svg>
